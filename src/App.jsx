@@ -1,15 +1,29 @@
-import CreateCard from "./Card";
+import Pokemon from "./SpriteGen";
 
 export default function App() {
-  const cardArray = new Array(10).fill(null);
+  const pokeArray = new Array(10).fill(null);
 
   return (
     <div className="card-container">
       <>
-        {cardArray.map((card, index) => (
-          <CreateCard card={card} key={index} />
+        {pokeArray.map((pokemon, index) => (
+          <div className="card" key={index}>
+            <Pokemon pokemon={pokemon} />
+          </div>
         ))}
       </>
     </div>
   );
 }
+
+// const [excludeIds, setExcludeIds] = useState([]);
+
+// let pokemonId;
+// do {
+//   pokemonId = randNum(151);
+// } while (excludeIds.includes(pokemonId));
+
+// excludeIds.push(pokemonId);
+
+// setExcludeIds((prevExcludeIds) => [...prevExcludeIds, data.id]);
+// console.log(prevExcludeIds);
