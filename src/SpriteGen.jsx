@@ -1,14 +1,12 @@
 import { useState, useEffect } from "react";
 
-const randNum = (max) => Math.floor(Math.random() * max) + 1;
-
-function pokeCall(abortSignal) {
-  return fetch(`https://pokeapi.co/api/v2/pokemon/${randNum(151)}`, {
+function pokeCall(abortSignal, randNumb) {
+  return fetch(`https://pokeapi.co/api/v2/pokemon/${randNumb}`, {
     signal: abortSignal,
   }).then((result) => result.json());
 }
 
-export default function Pokemon() {
+export default function Pokemon({ randNumb }) {
   const [pokeData, setPokeData] = useState(null);
   const [isShiny, setShiny] = useState("default");
 
@@ -16,11 +14,11 @@ export default function Pokemon() {
     const controller = new AbortController();
     const { signal } = controller;
 
-    pokeCall(signal)
+    pokeCall(signal, randNumb)
       .then((data) => {
         setPokeData(data);
 
-        const shinyRoll = randNum(65535);
+        const shinyRoll = Math.floor(Math.random() * 65535) + 1;
         if (shinyRoll === 8) {
           setShiny("shiny");
         } else {
