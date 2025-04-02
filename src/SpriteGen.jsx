@@ -18,7 +18,7 @@ export default function Pokemon({ randNumb }) {
       .then((data) => {
         setPokeData(data);
 
-        const shinyRoll = Math.floor(Math.random() * 65535) + 1;
+        const shinyRoll = Math.floor(Math.random() * 501) + 1;
         if (shinyRoll === 8) {
           setShiny("shiny");
         } else {
