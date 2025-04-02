@@ -30,11 +30,36 @@ body {
 
 .card {
   margin: 0.8rem;
-  display: flex;
-  justify-content: center;
   width: 2rem;
   min-width: 150px;
   border: solid 5px yellow;
   height: 180px;
   border-radius: 0.5rem;
+}
+
+.card-inner {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sprite-container {
+  display: flex;
+  background: white;
+  margin-top: 0rem;
+  padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+  height: 5rem;
+  border-radius: 5%;
+  justify-content: center;
+  align-items: center;
+}
+
+.sprite {
+  height: 6.5rem;
+}
+
+.poke-name {
 }

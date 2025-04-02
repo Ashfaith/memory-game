@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { pokemonTypes } from "./types";
 
 function pokeCall(abortSignal, randNumb) {
   return fetch(`https://pokeapi.co/api/v2/pokemon/${randNumb}`, {
@@ -36,9 +37,33 @@ export default function Pokemon({ randNumb }) {
     };
   }, []);
 
+  const captiliseFirstLetter = (value) => {
+    return String(value).charAt(0).toUpperCase() + String(value).slice(1);
+  };
+
+  const cardBackground = (val) => {
+    return pokemonTypes[val];
+  };
+
   if (!pokeData) return <div>Loading...</div>;
 
   return (
-    <img src={pokeData.sprites[`front_${isShiny}`]} alt="Pokemon Sprite" />
+    <>
+      <div
+        className="card-inner"
+        style={{
+          backgroundColor: `${cardBackground(pokeData.types[0].type.name)}`,
+        }}
+      >
+        <div className="sprite-container">
+          <img
+            className="sprite"
+            src={pokeData.sprites[`front_${isShiny}`]}
+            alt="Pokemon Sprite"
+          />
+        </div>
+        <h3 className="pokeName">{captiliseFirstLetter(pokeData.name)}</h3>
+      </div>
+    </>
   );
 }

@@ -80,7 +80,6 @@ export default function App() {
               scoreUpdate(card.position);
             }}
           >
-            <p>{card.position}</p>
             <Pokemon randNumb={card.pokeId} />
           </div>
         ))}
