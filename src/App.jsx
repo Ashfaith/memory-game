@@ -68,9 +68,9 @@ export default function App() {
   }
 
   return (
+    <>
+    <Score score={score}/>
     <div className="card-container">
-      <Score score={score} />
-      <>
         {cards.map((card) => (
           <div
             className="card"
@@ -83,7 +83,7 @@ export default function App() {
             <Pokemon randNumb={card.pokeId} />
           </div>
         ))}
-      </>
     </div>
+    </>
   );
 }

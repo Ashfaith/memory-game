@@ -13,11 +13,68 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+@font-face {
+  font-family: "card-bold-it";
+  src: url("assets/fonts/gill-sans-2/Gill Sans Bold Italic.otf") format(opentype);
+}
+
+@font-face {
+  font-family: "card-bold";
+  src: url("assets/fonts/gill-sans-2/Gill Sans Bold.otf") format(opentype);
+}
+
+@font-face {
+  font-family: "pokemon-title";
+  src: url("assets/fonts/pokemon/Pokemon Solid.ttf") format(truetype);
+}
+
 body {
   height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-image: url("assets/whos-that-bgrd.png");
+  background-size: cover;    
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+  height: 100vh;          
+}
+
+#root {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-family: pokemon-title;
+  font-size: 6.5rem;
+  color: rgb(248, 223, 0);
+  text-shadow: -2px -2px 0 #2e1b99, 4px -4px 0 #3521a8, -4px 4px 0 #3521a8, 4px 4px 0 #3521a8;
+  margin: -5rem 0 -1rem 0;
+}
+
+.sub-heading {
+  font-family: card-bold;
+  background-color: red;
+  color: white;
+  border: solid 6px #2e1b99;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  max-width: 13em;
+  padding: .5rem .8rem 0 .8rem;
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
 }
 
 .card-container {
@@ -26,6 +83,7 @@ body {
   width: 65vw;
   overflow-x: auto;
   justify-content: center;
+  max-width: 1000px;
 }
 
 .card {
@@ -55,11 +113,28 @@ body {
   border-radius: 5%;
   justify-content: center;
   align-items: center;
+  border: 3px solid rgb(179, 179, 179);
+  box-shadow: rgb(66, 66, 66) 0 2px 5px;
 }
 
 .sprite {
   height: 6.5rem;
 }
 
-.poke-name {
+.pokeName {
+  font-family: card-bold;
+  color: black;
+}
+
+.score-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.score-container > p {
+  margin: 0;
+  font-family: card-bold-it;
+  font-size: 1.5rem;
+  color: black;
 }

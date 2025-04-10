@@ -12,8 +12,10 @@ export default function Score({ score }) {
 
   return (
     <>
-      <div>Current Score:{score}</div>
-      <div>High Score:{highScore}</div>
+    <div className="score-container">
+      <p>Current Score:{score}</p>
+      <p>High Score:{highScore}</p>
+    </div>
     </>
   );
 }

@@ -9,7 +9,7 @@ export const pokemonTypes = {
   poison: "#A040A0",
   ground: "#E0C068",
   flying: "#A890F0",
-  psychic: "#F85888",
+  psychic: "#993299",
   bug: "#A8B820",
   rock: "#B8A038",
   ghost: "#705898",
